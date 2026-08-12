@@ -1,0 +1,320 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "navbar": {
+    "resume": "Currículum"
+  },
+  "footer": {
+    "builtWith": "Construido con tecnologías web modernas.",
+    "copyright": "© 2024 Abubakar. Todos los derechos reservados.",
+    "navHeading": "Navegación",
+    "resume": "Currículum",
+    "socialHeading": "Redes Sociales",
+    "tagline": "Un analista de negocios inteligente que crea soluciones basadas en datos."
+  },
+  "hero": {
+    "badge": "Portafolio",
+    "cta": {
+      "primary": "Ver mi trabajo",
+      "secondary": "Ponte en contacto"
+    },
+    "greeting": "Hola, soy Abubakar",
+    "headlineSuffix": "Analista de Negocios",
+    "subheadline": "Transformo datos complejos en información accionable e impulso decisiones estratégicas empresariales."
+  },
+  "skills": {
+    "eyebrow": "Experiencia",
+    "heading": "Habilidades Principales",
+    "subheading": "Herramientas y metodologías que utilizo para entregar resultados."
+  },
+  "cta": {
+    "button": "Iniciar una conversación",
+    "heading": "¿Listo para colaborar?",
+    "resume": "Descargar mi currículum",
+    "subheading": "Exploremos cómo puedo ayudarte a resolver tus desafíos empresariales."
+  },
+  "contactPage": {
+    "heroHeading": "Trabajemos Juntos",
+    "heroBody": "Ya sea que tengas un proyecto en mente, un desafío empresarial que desentrañar, o simplemente quieras conectar — siempre estoy abierto a una buena conversación. Envíame un mensaje y te responderé en 24 horas.",
+    "formHeading": "Envíame un Mensaje",
+    "formBody": "Completa el formulario a continuación y responderé lo antes posible. Todos los campos son obligatorios.",
+    "formCta": "Enviar Mensaje",
+    "socialHeading": "Encuéntrame en Línea",
+    "socialBody": "¿Prefieres otro canal? Conéctate conmigo en cualquiera de las plataformas a continuación — soy más activo en LinkedIn.",
+    "successMessage": "¡Mensaje enviado! Te responderé en 24 horas.",
+    "errorMessage": "Algo salió mal. Por favor, intenta de nuevo o envíame un correo directamente."
+  },
+  "projectsPage": {
+    "heroHeading": "Trabajo que Habla en Datos",
+    "heroBody": "Cada proyecto aquí comenzó con un problema desordenado y terminó con una respuesta clara. Explora los casos de estudio de Abubakar — cada uno una historia de requisitos desentrañados, procesos rediseñados y decisiones respaldadas por evidencia.",
+    "heroCta": "Ir a casos de estudio",
+    "gridHeading": "Casos de Estudio y Proyectos",
+    "gridBody": "Una selección curada de compromisos de análisis empresarial en operaciones, producto y estrategia.",
+    "caseStudyHeading": "Análisis Profundo: Reducción de Abandono de Clientes",
+    "caseStudyBody": "Un vistazo más cercano a uno de los compromisos más impactantes de Abubakar — desde el resumen inicial hasta la presentación en la junta directiva.",
+    "ctaHeading": "¿Tienes un Problema que Vale la Pena Resolver?",
+    "ctaBody": "Si tienes datos desordenados, requisitos poco claros o un proceso que te está costando dinero silenciosamente — hablemos. Abubakar convierte la ambigüedad en acción.",
+    "ctaButton": "Ponte en contacto"
+  },
+  "homePage": {
+    "heroHeading": "Abubakar",
+    "heroSubtitle": "Business Analyst",
+    "heroTagline": "Un BA inteligente",
+    "heroCta": "Ver Mi Trabajo",
+    "aboutHeading": "Sobre Mí",
+    "aboutBody": "Soy Abubakar — un Business Analyst que prospera en la intersección de estrategia, datos y personas. Traduzco desafíos empresariales ambiguos en requisitos estructurados, resultados medibles y soluciones que realmente se construyen. Ya sea mapeando viajes de stakeholders, facilitando talleres de descubrimiento o probando un modelo de proceso, aporto rigor analítico y comunicación clara a cada compromiso. Creo que el mejor trabajo de BA es invisible — cuando la solución correcta se lanza a tiempo y todos se preguntan por qué fue tan fluido.",
+    "skillsHeading": "Habilidades y Herramientas",
+    "skillsBody": "Un conjunto de herramientas seleccionado construido a través de proyectos en finanzas, operaciones y transformación digital.",
+    "experienceHeading": "Experiencia",
+    "experienceBody": "Un historial de entrega de claridad en entornos complejos.",
+    "ctaHeading": "Trabajemos Juntos",
+    "ctaBody": "¿Tienes un proyecto que necesita análisis agudo, requisitos claros o un BA que pueda empezar de inmediato? Me encantaría saber de él.",
+    "ctaButton": "Ponte en Contacto"
+  },
+  "contact": {
+    "availability": {
+      "badge": "Disponible",
+      "body": "Abierto a nuevas oportunidades y colaboraciones.",
+      "title": "Trabajemos juntos"
+    },
+    "form": {
+      "emailLabel": "Correo Electrónico",
+      "emailPlaceholder": "tu@email.com",
+      "errorMessage": "Algo salió mal. Por favor, intenta de nuevo.",
+      "errors": {
+        "emailInvalid": "Por favor, ingresa una dirección de correo válida.",
+        "emailRequired": "El correo electrónico es obligatorio.",
+        "messageRequired": "El mensaje no puede estar vacío.",
+        "messageTooShort": "El mensaje debe tener al menos 10 caracteres.",
+        "nameRequired": "El nombre es obligatorio.",
+        "nameTooShort": "El nombre debe tener al menos 2 caracteres.",
+        "subjectRequired": "El asunto es obligatorio."
+      },
+      "heading": "Ponte en contacto",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto o consulta...",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "privacy": "Respeto tu privacidad. Tus datos están seguros.",
+      "subjectLabel": "Asunto",
+      "subjectPlaceholder": "¿De qué se trata?",
+      "submit": "Enviar mensaje",
+      "submitting": "Enviando...",
+      "success": {
+        "again": "Enviar otro mensaje",
+        "body": "Me pondré en contacto pronto.",
+        "title": "¡Mensaje recibido!"
+      }
+    },
+    "hero": {
+      "badge": "Contacto",
+      "subtitle": "Ponte en contacto para consultas, colaboraciones o simplemente para saludar.",
+      "title": "Conectemos"
+    },
+    "resume": {
+      "button": "Descargar currículum"
+    },
+    "social": {
+      "heading": "Encuéntrame en línea",
+      "subheading": "Conecta en redes sociales."
+    }
+  },
+  "projects": {
+    "caseStudy": {
+      "challenge": "El desafío",
+      "featured": "Trabajo destacado",
+      "label": "Caso de estudio",
+      "results": "Resultados",
+      "solution": "Solución"
+    },
+    "cta": {
+      "button": "Iniciar un proyecto",
+      "subtitle": "Colaboremos en tu próximo desafío empresarial.",
+      "title": "¿Listo para trabajar juntos?"
+    },
+    "empty": "Sin proyectos aún. Vuelve pronto.",
+    "eyebrow": "Portafolio",
+    "featuredBadge": "Destacado",
+    "heading": "Trabajos seleccionados",
+    "hero": {
+      "eyebrow": "Qué hago",
+      "subtitle": "Análisis estratégico e información que impulsa decisiones empresariales.",
+      "title": "Análisis empresarial y estrategia"
+    },
+    "viewAll": "Ver todos los proyectos"
+  },
+  "testimonials": {
+    "eyebrow": "Prueba social",
+    "heading": "Lo que otros dicen"
+  },
+  "about": [
+    "Requirements elicitation & documentation that development teams actually read",
+    "Stakeholder alignment across C-suite, product, and engineering",
+    "Process modelling (BPMN, swimlane diagrams, user story mapping)",
+    "Data analysis and KPI definition to measure what matters",
+    "Agile & Scrum ceremonies — sprint planning, backlog grooming, retrospectives"
+  ],
+  "experience": [
+    {
+      "period": "2022 – Present",
+      "title": "Senior Business Analyst",
+      "company": "FinBridge Solutions",
+      "description": "Led end-to-end requirements definition for a core banking modernisation programme serving 1.2M customers. Reduced rework cycles by 40% through structured discovery workshops and a living requirements repository in Confluence."
+    },
+    {
+      "period": "2020 – 2022",
+      "title": "Business Analyst",
+      "company": "Nexora Digital",
+      "description": "Embedded within a cross-functional agile squad to deliver a B2B SaaS onboarding overhaul. Authored 120+ user stories, facilitated 30+ stakeholder interviews, and helped cut customer time-to-value from 14 days to 4."
+    },
+    {
+      "period": "2018 – 2020",
+      "title": "Junior Business Analyst",
+      "company": "Meridian Consulting",
+      "description": "Supported process improvement engagements across retail and logistics clients. Produced As-Is / To-Be process maps and business cases that secured £2M in operational savings."
+    },
+    {
+      "period": "2016 – 2018",
+      "title": "Data & Operations Analyst",
+      "company": "Crestline Group",
+      "description": "Maintained management reporting dashboards in Power BI and Excel, surfacing weekly KPIs for the COO and department heads across three business units."
+    }
+  ],
+  "projects-grid": [
+    {
+      "title": "Customer Churn Reduction",
+      "sector": "Retail Banking",
+      "description": "Analysed 18 months of transaction and support data to identify churn signals 60 days before attrition. Delivered a prioritised intervention playbook that reduced quarterly churn by 22%.",
+      "tags": [
+        "Data Analysis",
+        "SQL",
+        "Power BI",
+        "Stakeholder Workshops"
+      ]
+    },
+    {
+      "title": "E-Commerce Checkout Redesign",
+      "sector": "FinTech Startup",
+      "description": "Led end-to-end requirements gathering across product, engineering, and compliance teams to overhaul a 7-step checkout into a 3-step flow. Conversion rate improved by 34% within 6 weeks of launch.",
+      "tags": [
+        "Process Mapping",
+        "User Stories",
+        "BPMN",
+        "Agile"
+      ]
+    },
+    {
+      "title": "Inventory Forecasting Model",
+      "sector": "FMCG Distributor",
+      "description": "Partnered with supply chain and finance to replace a spreadsheet-based forecast with a structured demand-sensing model. Reduced overstock costs by £120k in the first quarter.",
+      "tags": [
+        "Requirements Elicitation",
+        "Excel Modelling",
+        "Tableau",
+        "Gap Analysis"
+      ]
+    },
+    {
+      "title": "HR Onboarding Automation",
+      "sector": "Professional Services Firm",
+      "description": "Mapped the existing 14-step manual onboarding process, identified 6 redundant touchpoints, and authored the BRD for an automated workflow. Time-to-productivity for new hires dropped from 3 weeks to 9 days.",
+      "tags": [
+        "As-Is / To-Be Mapping",
+        "BRD",
+        "Stakeholder Management",
+        "Jira"
+      ]
+    },
+    {
+      "title": "Revenue Leakage Audit",
+      "sector": "SaaS Platform",
+      "description": "Conducted a root-cause analysis across billing, CRM, and product usage data to surface £280k in unrecognised annual revenue. Presented findings and remediation roadmap to C-suite.",
+      "tags": [
+        "Root Cause Analysis",
+        "Data Reconciliation",
+        "PowerPoint",
+        "Excel"
+      ]
+    },
+    {
+      "title": "Regulatory Compliance Dashboard",
+      "sector": "Insurance",
+      "description": "Translated complex FCA reporting requirements into a real-time Power BI dashboard used by the compliance team daily. Eliminated 40 hours of manual monthly reporting.",
+      "tags": [
+        "Regulatory Analysis",
+        "Power BI",
+        "Data Modelling",
+        "UAT"
+      ]
+    }
+  ],
+  "case-study-details": [
+    {
+      "label": "Challenge",
+      "body": "A mid-sized retail bank was losing 8% of its active current-account holders per quarter with no clear understanding of why. The existing reporting flagged churn after it happened, giving the retention team nothing to act on."
+    },
+    {
+      "label": "Approach",
+      "body": "Abubakar facilitated discovery workshops with the retention, data, and product teams to align on the definition of 'at-risk'. He then designed a structured data request, pulling 18 months of transaction frequency, support ticket history, and product usage signals from three separate systems."
+    },
+    {
+      "label": "Analysis",
+      "body": "Using SQL for extraction and Power BI for visualisation, he identified three leading behavioural indicators that preceded churn by an average of 58 days: declining direct-debit activity, a spike in balance-enquiry calls, and dormancy in the mobile app."
+    },
+    {
+      "label": "Solution",
+      "body": "Abubakar authored a prioritised intervention playbook mapping each risk tier to a specific retention action — proactive outreach, fee waiver offer, or product switch recommendation — and presented it to the Head of Retail and the CMO."
+    },
+    {
+      "label": "Results",
+      "body": "Within one quarter of implementation, churn dropped by 22%. The retention team reported that the playbook gave them a shared language and a clear decision framework for the first time. The model was subsequently adopted by two other product lines."
+    },
+    {
+      "label": "Tools Used",
+      "body": "SQL (PostgreSQL), Power BI, Excel, Miro (workshop facilitation), Confluence (documentation), PowerPoint (executive presentation)"
+    }
+  ],
+  "contact-form": [
+    {
+      "label": "Full Name",
+      "placeholder": "Your first and last name"
+    },
+    {
+      "label": "Email Address",
+      "placeholder": "Where I can reach you back"
+    },
+    {
+      "label": "Subject",
+      "placeholder": "e.g. Project Inquiry, Collaboration, Freelance Opportunity"
+    },
+    {
+      "label": "Message",
+      "placeholder": "Tell me about your project, challenge, or idea — the more detail, the better"
+    }
+  ],
+  "social-links": [
+    {
+      "platform": "LinkedIn",
+      "handle": "linkedin.com/in/abubakar-ba",
+      "desc": "Professional updates, case studies, and BA insights"
+    },
+    {
+      "platform": "GitHub",
+      "handle": "github.com/abubakar-ba",
+      "desc": "Side projects, data scripts, and open-source contributions"
+    },
+    {
+      "platform": "Twitter / X",
+      "handle": "@abubakar_ba",
+      "desc": "Thoughts on business analysis, product strategy, and tech"
+    },
+    {
+      "platform": "Email",
+      "handle": "hello@abubakar.dev",
+      "desc": "Direct line for serious inquiries and collaborations"
+    }
+  ]
+}
