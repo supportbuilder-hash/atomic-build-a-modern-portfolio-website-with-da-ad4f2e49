@@ -86,94 +86,53 @@ export default function HomePage() {
   return (
     <main className="overflow-x-hidden">
       {/* ── Hero ── */}
-      <section
-        id="home"
-        className="relative min-h-[92vh] flex items-center bg-[var(--background)]"
-      >
+      <section id="home" className="relative min-h-[92vh] flex items-center bg-[var(--background)]">
         {/* Mesh glow */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 overflow-hidden"
-        >
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-[var(--brand-accent)]/10 blur-[120px]" />
           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[var(--brand-accent)]/5 blur-[100px]" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-28 md:py-36 grid md:grid-cols-2 gap-16 items-center">
           {/* Left copy */}
-          <motion.div
-            variants={heroContainer}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col gap-6"
-          >
-            <motion.span
-              variants={heroBadge}
-              className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--brand-accent)]/30 bg-[var(--brand-accent)]/10 px-4 py-1.5 text-sm font-medium text-[var(--brand-accent)]"
-            >
+          <motion.div variants={heroContainer} initial="hidden" animate="visible" className="flex flex-col gap-6">
+            <motion.span variants={heroBadge} className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--brand-accent)]/30 bg-[var(--brand-accent)]/10 px-4 py-1.5 text-sm font-medium text-[var(--brand-accent)]">
               <Zap className="h-3.5 w-3.5" aria-hidden="true" />
               {t("hero.badge")}
             </motion.span>
 
-            <motion.h1
-              variants={fadeInUp}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--foreground)] leading-[1.05] text-balance"
-            >
+            <motion.h1 variants={fadeInUp} className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--foreground)] leading-[1.05] text-balance">
               {t("hero.greeting")}{" "}
               <span className="text-[var(--brand-accent)]">{brandConstants.name}</span>
               {t("hero.headlineSuffix")}
             </motion.h1>
 
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg md:text-xl text-[var(--muted-foreground)] leading-relaxed max-w-lg text-pretty"
-            >
+            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-[var(--muted-foreground)] leading-relaxed max-w-lg text-pretty">
               {t("hero.subheadline")}
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 pt-2">
-              <Link
-                href="/projects"
-                className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-accent)] px-6 py-3 text-sm font-semibold text-[var(--brand-accent-foreground)] shadow-[0_4px_24px_-4px_var(--brand-accent)] transition-all duration-300 hover:brightness-110 hover:shadow-[0_8px_32px_-4px_var(--brand-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
-              >
+              <Link href="/projects" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-accent)] px-6 py-3 text-sm font-semibold text-[var(--brand-accent-foreground)] shadow-[0_4px_24px_-4px_var(--brand-accent)] transition-all duration-300 hover:brightness-110 hover:shadow-[0_8px_32px_-4px_var(--brand-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]">
                 {t("hero.cta.primary")}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-transparent px-6 py-3 text-sm font-semibold text-[var(--foreground)] transition-all duration-300 hover:bg-[var(--muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
-              >
+              <Link href="/contact" className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-transparent px-6 py-3 text-sm font-semibold text-[var(--foreground)] transition-all duration-300 hover:bg-[var(--muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]">
                 {t("hero.cta.secondary")}
               </Link>
             </motion.div>
           </motion.div>
 
           {/* Right visual card */}
-          <motion.div
-            variants={slideInRight}
-            initial="hidden"
-            animate="visible"
-            className="hidden md:flex justify-center"
-          >
+          <motion.div variants={slideInRight} initial="hidden" animate="visible" className="hidden md:flex justify-center">
             <div className="relative w-full max-w-sm">
               {/* Floating card */}
               <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-8 shadow-[0_2px_4px_rgba(0,0,0,0.06),0_24px_64px_-12px_rgba(0,0,0,0.25)]">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="h-14 w-14 rounded-full bg-[var(--brand-accent)]/20 flex items-center justify-center text-2xl font-bold text-[var(--brand-accent)]">
-                    A
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[var(--foreground)]">{brandConstants.name}</p>
-                    <p className="text-sm text-[var(--muted-foreground)]">{brandConstants.title}</p>
-                  </div>
-                </div>
+                <div className="flex items-center gap-4 mb-6">Abubakar Naeem</div>
                 <div className="space-y-3">
-                  {["Requirements Analysis", "Stakeholder Alignment", "Data-Driven Insights"].map((item) => (
-                    <div key={item} className="flex items-center gap-3">
-                      <CheckCircle className="h-4 w-4 text-[var(--brand-accent)] shrink-0" aria-hidden="true" />
-                      <span className="text-sm text-[var(--muted-foreground)]">{item}</span>
-                    </div>
-                  ))}
+                  {["Requirements Analysis", "Stakeholder Alignment", "Data-Driven Insights"].map((item) => (<div key={item} className="flex items-center gap-3">
+                    <CheckCircle className="h-4 w-4 text-[var(--brand-accent)] shrink-0" aria-hidden="true" />
+                    <span className="text-sm text-[var(--muted-foreground)]">{item}</span>
+                  </div>))}
                 </div>
                 <div className="mt-6 pt-6 border-t border-[var(--border)] grid grid-cols-2 gap-4">
                   <div>
@@ -193,35 +152,24 @@ export default function HomePage() {
                 style={{
                   backgroundImage: "radial-gradient(circle, var(--brand-accent) 1px, transparent 1px)",
                   backgroundSize: "12px 12px",
-                }}
-              />
+                }} />
             </div>
           </motion.div>
         </div>
       </section>
-
       {/* ── Stats bar ── */}
       <Reveal>
         <section className="border-y border-[var(--border)] bg-[var(--card)]">
           <div className="mx-auto max-w-6xl px-6 py-10">
-            <motion.ul
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8"
-            >
-              {STATS.map((stat) => (
-                <motion.li key={stat.label} variants={scaleIn} className="text-center">
-                  <p className="text-4xl font-bold text-[var(--brand-accent)] tracking-tight">{stat.value}</p>
-                  <p className="mt-1 text-sm text-[var(--muted-foreground)]">{stat.label}</p>
-                </motion.li>
-              ))}
+            <motion.ul variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {STATS.map((stat) => (<motion.li key={stat.label} variants={scaleIn} className="text-center">
+                <p className="text-4xl font-bold text-[var(--brand-accent)] tracking-tight">{stat.value}</p>
+                <p className="mt-1 text-sm text-[var(--muted-foreground)]">{stat.label}</p>
+              </motion.li>))}
             </motion.ul>
           </div>
         </section>
       </Reveal>
-
       {/* ── Skills / Services ── */}
       <Reveal>
         <section id="about" className="bg-[var(--background)] py-24 md:py-32">
@@ -238,22 +186,11 @@ export default function HomePage() {
               </p>
             </div>
 
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
+            <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {SKILLS.map((skill, i) => {
                 const Icon = skill.icon;
                 return (
-                  <motion.div
-                    key={skill.label}
-                    variants={fadeInUp}
-                    whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                    className={`group rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12)] transition-shadow duration-300 hover:shadow-[0_2px_4px_rgba(0,0,0,0.06),0_16px_40px_-8px_rgba(0,0,0,0.2)] ${i === 0 ? "lg:col-span-1" : ""}`}
-                  >
+                  <motion.div key={skill.label} variants={fadeInUp} whileHover={{ y: -4, transition: { duration: 0.2 } }} className={`group rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12)] transition-shadow duration-300 hover:shadow-[0_2px_4px_rgba(0,0,0,0.06),0_16px_40px_-8px_rgba(0,0,0,0.2)] ${i === 0 ? "lg:col-span-1" : ""}`}>
                     <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--brand-accent)]/15 text-[var(--brand-accent)] transition-colors duration-300 group-hover:bg-[var(--brand-accent)]/25">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </div>
@@ -266,7 +203,6 @@ export default function HomePage() {
           </div>
         </section>
       </Reveal>
-
       {/* ── Featured Projects ── */}
       <Reveal>
         <section className="bg-[var(--muted)]/40 py-24 md:py-32">
@@ -280,10 +216,7 @@ export default function HomePage() {
                   {t("projects.heading")}
                 </h2>
               </div>
-              <Link
-                href="/projects"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-accent)] hover:underline underline-offset-4 transition-all"
-              >
+              <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-accent)] hover:underline underline-offset-4 transition-all">
                 {t("projects.viewAll")}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
@@ -292,10 +225,7 @@ export default function HomePage() {
             <div className="grid md:grid-cols-3 gap-6">
               {FEATURED_PROJECTS.map((project, i) => (
                 <Reveal key={project.title} delay={i * 0.1}>
-                  <motion.article
-                    whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                    className="flex flex-col h-full rounded-2xl border border-[var(--border)] bg-[var(--card)] p-7 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12)] transition-shadow duration-300 hover:shadow-[0_2px_4px_rgba(0,0,0,0.06),0_20px_48px_-8px_rgba(0,0,0,0.22)]"
-                  >
+                  <motion.article whileHover={{ y: -6, transition: { duration: 0.25 } }} className="flex flex-col h-full rounded-2xl border border-[var(--border)] bg-[var(--card)] p-7 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12)] transition-shadow duration-300 hover:shadow-[0_2px_4px_rgba(0,0,0,0.06),0_20px_48px_-8px_rgba(0,0,0,0.22)]">
                     <span className="mb-4 inline-flex w-fit rounded-full bg-[var(--brand-accent)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand-accent)]">
                       {project.category}
                     </span>
@@ -306,14 +236,9 @@ export default function HomePage() {
                       {project.outcome}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-[var(--border)] px-2.5 py-0.5 text-xs text-[var(--muted-foreground)]"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                      {project.tags.map((tag) => (<span key={tag} className="rounded-full border border-[var(--border)] px-2.5 py-0.5 text-xs text-[var(--muted-foreground)]">
+                        {tag}
+                      </span>))}
                     </div>
                   </motion.article>
                 </Reveal>
@@ -322,7 +247,6 @@ export default function HomePage() {
           </div>
         </section>
       </Reveal>
-
       {/* ── Testimonials ── */}
       <Reveal>
         <section className="bg-[var(--background)] py-24 md:py-32">
@@ -336,19 +260,9 @@ export default function HomePage() {
               </h2>
             </div>
 
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              className="grid md:grid-cols-3 gap-6"
-            >
+            <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="grid md:grid-cols-3 gap-6">
               {TESTIMONIALS.map((t_item, i) => (
-                <motion.blockquote
-                  key={t_item.author}
-                  variants={fadeInUp}
-                  className={`rounded-2xl border border-[var(--border)] bg-[var(--card)] p-7 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12)] flex flex-col gap-5 ${i === 1 ? "md:mt-6" : ""}`}
-                >
+                <motion.blockquote key={t_item.author} variants={fadeInUp} className={`rounded-2xl border border-[var(--border)] bg-[var(--card)] p-7 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12)] flex flex-col gap-5 ${i === 1 ? "md:mt-6" : ""}`}>
                   <div className="flex gap-1" aria-label="5 stars">
                     {Array.from({ length: 5 }).map((_, si) => (
                       <Star key={si} className="h-4 w-4 fill-[var(--brand-accent)] text-[var(--brand-accent)]" aria-hidden="true" />
@@ -372,17 +286,11 @@ export default function HomePage() {
           </div>
         </section>
       </Reveal>
-
       {/* ── CTA ── */}
       <Reveal>
         <section className="bg-[var(--brand-accent)] py-20 md:py-28">
           <div className="mx-auto max-w-4xl px-6 text-center">
-            <motion.div
-              variants={slideInLeft}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-            >
+            <motion.div variants={slideInLeft} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }}>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--brand-accent-foreground)] text-balance mb-4">
                 {t("cta.heading")}
               </h2>
@@ -390,18 +298,11 @@ export default function HomePage() {
                 {t("cta.subheading")}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-accent-foreground)] px-8 py-3.5 text-sm font-bold text-[var(--brand-accent)] shadow-lg transition-all duration-300 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent-foreground)]"
-                >
+                <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-accent-foreground)] px-8 py-3.5 text-sm font-bold text-[var(--brand-accent)] shadow-lg transition-all duration-300 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent-foreground)]">
                   {t("cta.button")}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
-                <a
-                  href={brandConstants.resumeUrl}
-                  download
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--brand-accent-foreground)]/40 px-8 py-3.5 text-sm font-bold text-[var(--brand-accent-foreground)] transition-all duration-300 hover:border-[var(--brand-accent-foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent-foreground)]"
-                >
+                <a href={brandConstants.resumeUrl} download className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--brand-accent-foreground)]/40 px-8 py-3.5 text-sm font-bold text-[var(--brand-accent-foreground)] transition-all duration-300 hover:border-[var(--brand-accent-foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent-foreground)]">
                   {t("cta.resume")}
                 </a>
               </div>
