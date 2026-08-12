@@ -11,7 +11,7 @@
   --border: #2A2A3D;
   --foreground: #F0EEF8;
   --muted-foreground: #9B97B8;
-  --primary: #10b981;
+  --primary: #7C3AED;
   --accent: #A78BFA;
 
   /* Extended tokens */
@@ -32,7 +32,6 @@
   --radius: 10px;
     --brand-dark: 240 10% 3.9%;
     --brand-accent: 240 10% 3.9%;
-    --ring: #10b981;
 }
 
 * {
