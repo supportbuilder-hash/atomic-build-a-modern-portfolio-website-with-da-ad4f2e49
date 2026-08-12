@@ -1,14 +1,13 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Briefcase as Linkedin, Code2 as Github, Send, CheckCircle, AlertCircle, User, AtSign, MessageSquare, FileText } from 'lucide-react';
+import { Mail, Briefcase as Linkedin, Code2 as Github, Send, CheckCircle, AlertCircle, User, AtSign, MessageSquare, FileText, MessageCircle as Twitter } from 'lucide-react';
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
-type brandConstants = any;
-const brandConstants: any = [];
-import { fadeInUp, staggerContainer, slideInLeft, slideInRight } from "@/lib/motion";
+import { fadeInUp, staggerContainer } from "@/lib/motion";
 import { useTranslations } from "next-intl";
+import { socialLinks } from "@/lib/data";
 
 interface FormState {
   name: string;
@@ -53,12 +52,12 @@ function InputField({
     <div className="flex flex-col gap-1.5">
       <label htmlFor={id} className="text-sm font-medium text-[var(--foreground)]/80">
         {label}
-        {required && <span className="text-[var(--brand-accent)] ml-1">*</span>}
+        {required && <span className="text-[var(--accent)] ml-1">*</span>}
       </label>
       <div className="relative">
         <span
           className={`absolute left-3 top-1/2 -translate-y-1/2 transition-colors duration-200 ${
-            focused ? "text-[var(--brand-accent)]" : "text-[var(--foreground)]/40"
+            focused ? "text-[var(--accent)]" : "text-[var(--foreground)]/40"
           }`}
         >
           <Icon className="h-4 w-4" aria-hidden="true" />
@@ -74,11 +73,11 @@ function InputField({
           aria-required={required}
           aria-invalid={!!error}
           aria-describedby={error ? `${id}-error` : undefined}
-          className={`w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border text-[var(--foreground)] placeholder:text-[var(--foreground)]/30 text-sm transition-all duration-200 outline-none focus:ring-2 focus:ring-[var(--brand-accent)]/30 ${
+          className={`w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border text-[var(--foreground)] placeholder:text-[var(--foreground)]/30 text-sm transition-all duration-200 outline-none focus:ring-2 focus:ring-[var(--accent)]/30 ${
             error
               ? "border-red-500/60 focus:border-red-500"
               : focused
-              ? "border-[var(--brand-accent)]/60"
+              ? "border-[var(--accent)]/60"
               : "border-white/10 hover:border-white/20"
           }`}
         />
@@ -116,36 +115,27 @@ function TextAreaField({
     <div className="flex flex-col gap-1.5">
       <label htmlFor={id} className="text-sm font-medium text-[var(--foreground)]/80">
         {label}
-        {required && <span className="text-[var(--brand-accent)] ml-1">*</span>}
+        {required && <span className="text-[var(--accent)] ml-1">*</span>}
       </label>
-      <div className="relative">
-        <span
-          className={`absolute left-3 top-3.5 transition-colors duration-200 ${
-            focused ? "text-[var(--brand-accent)]" : "text-[var(--foreground)]/40"
-          }`}
-        >
-          <MessageSquare className="h-4 w-4" aria-hidden="true" />
-        </span>
-        <textarea
-          id={id}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-          placeholder={placeholder}
-          rows={5}
-          aria-required={required}
-          aria-invalid={!!error}
-          aria-describedby={error ? `${id}-error` : undefined}
-          className={`w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border text-[var(--foreground)] placeholder:text-[var(--foreground)]/30 text-sm transition-all duration-200 outline-none focus:ring-2 focus:ring-[var(--brand-accent)]/30 resize-none ${
-            error
-              ? "border-red-500/60 focus:border-red-500"
-              : focused
-              ? "border-[var(--brand-accent)]/60"
-              : "border-white/10 hover:border-white/20"
-          }`}
-        />
-      </div>
+      <textarea
+        id={id}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+        placeholder={placeholder}
+        rows={5}
+        aria-required={required}
+        aria-invalid={!!error}
+        aria-describedby={error ? `${id}-error` : undefined}
+        className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-[var(--foreground)] placeholder:text-[var(--foreground)]/30 text-sm transition-all duration-200 outline-none focus:ring-2 focus:ring-[var(--accent)]/30 resize-none ${
+          error
+            ? "border-red-500/60 focus:border-red-500"
+            : focused
+            ? "border-[var(--accent)]/60"
+            : "border-white/10 hover:border-white/20"
+        }`}
+      />
       {error && (
         <p id={`${id}-error`} className="flex items-center gap-1 text-xs text-red-400">
           <AlertCircle className="h-3 w-3" aria-hidden="true" />
@@ -156,44 +146,15 @@ function TextAreaField({
   );
 }
 
-const SOCIAL_LINKS = [
-  {
-    id: "linkedin",
-    label: "LinkedIn",
-    handle: "abubakar-ba",
-    href: brandConstants.socials.linkedin,
-    icon: Linkedin,
-    description: "Connect professionally",
-    color: "from-blue-500/20 to-blue-600/10",
-    border: "border-blue-500/20 hover:border-blue-400/40",
-    iconColor: "text-blue-400",
-  },
-  {
-    id: "github",
-    label: "GitHub",
-    handle: "abubakar-ba",
-    href: brandConstants.socials.github,
-    icon: Github,
-    description: "See my work",
-    color: "from-white/10 to-white/5",
-    border: "border-white/10 hover:border-white/25",
-    iconColor: "text-white/80",
-  },
-  {
-    id: "email",
-    label: "Email",
-    handle: brandConstants.email,
-    href: `mailto:${brandConstants.email}`,
-    icon: Mail,
-    description: "Drop me a line",
-    color: "from-[var(--brand-accent)]/20 to-[var(--brand-accent)]/5",
-    border: "border-[var(--brand-accent)]/20 hover:border-[var(--brand-accent)]/50",
-    iconColor: "text-[var(--brand-accent)]",
-  },
-];
+const platformIconMap: Record<string, React.ReactNode> = {
+  LinkedIn: <Linkedin className="h-5 w-5" aria-hidden="true" />,
+  GitHub: <Github className="h-5 w-5" aria-hidden="true" />,
+  Twitter: <Twitter className="h-5 w-5" aria-hidden="true" />,
+  Email: <Mail className="h-5 w-5" aria-hidden="true" />,
+};
 
 export default function ContactPage() {
-  const t = useTranslations();
+  const t = useTranslations("contactPage");
 
   const [form, setForm] = useState<FormState>({
     name: "",
@@ -203,30 +164,22 @@ export default function ContactPage() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<SubmitStatus>("idle");
-  const formRef = useRef<HTMLFormElement>(null);
 
-  const updateField = (field: keyof FormState) => (val: string) => {
+  const setField = (field: keyof FormState) => (val: string) =>
     setForm((prev) => ({ ...prev, [field]: val }));
-    if (errors[field]) {
-      setErrors((prev) => ({ ...prev, [field]: undefined }));
-    }
-  };
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
-    if (!form.name.trim()) newErrors.name = t("contact.form.errors.nameRequired");
-    else if (form.name.trim().length < 2) newErrors.name = t("contact.form.errors.nameTooShort");
-
-    if (!form.email.trim()) newErrors.email = t("contact.form.errors.emailRequired");
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
-      newErrors.email = t("contact.form.errors.emailInvalid");
-
-    if (!form.subject.trim()) newErrors.subject = t("contact.form.errors.subjectRequired");
-
-    if (!form.message.trim()) newErrors.message = t("contact.form.errors.messageRequired");
+    if (!form.name.trim()) newErrors.name = "Name is required.";
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+    if (!form.subject.trim()) newErrors.subject = "Subject is required.";
+    if (!form.message.trim()) newErrors.message = "Message is required.";
     else if (form.message.trim().length < 20)
-      newErrors.message = t("contact.form.errors.messageTooShort");
-
+      newErrors.message = "Message must be at least 20 characters.";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -234,13 +187,9 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-
     setStatus("submitting");
-
-    // EmailJS-ready handler — replace with real EmailJS call when configured
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      // emailjs.sendForm("SERVICE_ID", "TEMPLATE_ID", formRef.current!, "PUBLIC_KEY")
+      await new Promise((res) => setTimeout(res, 1500));
       setStatus("success");
       setForm({ name: "", email: "", subject: "", message: "" });
     } catch {
@@ -249,227 +198,181 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="relative min-h-screen overflow-hidden">
-      {/* Ambient background glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-0"
-      >
-        <div className="absolute top-[-10%] left-[20%] w-[500px] h-[500px] rounded-full bg-[var(--brand-accent)]/5 blur-[120px]" />
-        <div className="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] rounded-full bg-blue-500/5 blur-[100px]" />
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-        {/* Page Hero */}
-        <Reveal className="mb-16 md:mb-20">
-          <div className="text-center max-w-2xl mx-auto">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-[var(--brand-accent)]/10 text-[var(--brand-accent)] border border-[var(--brand-accent)]/20 mb-5">
-              {t("contact.hero.badge")}
+    <div className="min-h-screen bg-[var(--background)] pt-24 pb-20">
+      {/* Hero */}
+      <section className="max-w-4xl mx-auto px-6 text-center mb-16">
+        <Reveal>
+          <motion.div variants={fadeInUp}>
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-[var(--primary)]/10 text-[var(--accent)] border border-[var(--primary)]/20 mb-4">
+              Contact
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[var(--foreground)] mb-5 text-balance">
-              {t("contact.hero.title")}
+            <h1
+              className="text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-4"
+              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            >
+              {t("heroHeading")}
             </h1>
-            <p className="text-lg text-[var(--foreground)]/60 leading-relaxed text-pretty">
-              {t("contact.hero.subtitle")}
+            <p className="text-lg text-[var(--muted-foreground)] max-w-2xl mx-auto leading-relaxed">
+              {t("heroBody")}
             </p>
-          </div>
+          </motion.div>
         </Reveal>
+      </section>
 
-        {/* Two-column layout */}
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-5 gap-12">
+        {/* Form — 3 cols */}
         <motion.div
+          className="lg:col-span-3"
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start"
         >
-          {/* Contact Form — left (3 cols) */}
-          <motion.div variants={slideInLeft} className="lg:col-span-3">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm p-6 sm:p-8 shadow-[0_1px_2px_rgba(0,0,0,0.08),0_16px_48px_-12px_rgba(0,0,0,0.3)]">
-              <h2 className="text-xl font-semibold text-[var(--foreground)] mb-6">
-                {t("contact.form.heading")}
+          <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-8">
+            <h2
+              className="text-xl font-bold text-[var(--foreground)] mb-1"
+              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            >
+              {t("formHeading")}
+            </h2>
+            <p className="text-sm text-[var(--muted-foreground)] mb-6">{t("formBody")}</p>
+
+            {status === "success" && (
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 mb-6 text-sm">
+                <CheckCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
+                {t("successMessage")}
+              </div>
+            )}
+            {status === "error" && (
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 mb-6 text-sm">
+                <AlertCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
+                {t("errorMessage")}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
+              <InputField
+                id="name"
+                label="Full Name"
+                value={form.name}
+                onChange={setField("name")}
+                error={errors.name}
+                placeholder="Abubakar"
+                icon={User}
+                required
+              />
+              <InputField
+                id="email"
+                label="Email Address"
+                type="email"
+                value={form.email}
+                onChange={setField("email")}
+                error={errors.email}
+                placeholder="hello@example.com"
+                icon={AtSign}
+                required
+              />
+              <InputField
+                id="subject"
+                label="Subject"
+                value={form.subject}
+                onChange={setField("subject")}
+                error={errors.subject}
+                placeholder="Project enquiry"
+                icon={FileText}
+                required
+              />
+              <TextAreaField
+                id="message"
+                label="Message"
+                value={form.message}
+                onChange={setField("message")}
+                error={errors.message}
+                placeholder="Tell me about your project or challenge..."
+                required
+              />
+              <button
+                type="submit"
+                disabled={status === "submitting"}
+                className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white font-semibold text-sm transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {status === "submitting" ? (
+                  <>
+                    <span className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Sending…
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-4 w-4" aria-hidden="true" />
+                    {t("formCta")}
+                  </>
+                )}
+              </button>
+            </form>
+          </div>
+        </motion.div>
+
+        {/* Sidebar — 2 cols */}
+        <div className="lg:col-span-2 flex flex-col gap-8">
+          <Reveal delay={0.1}>
+            <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6">
+              <h2
+                className="text-lg font-bold text-[var(--foreground)] mb-1"
+                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+              >
+                {t("socialHeading")}
               </h2>
-
-              {status === "success" ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center justify-center gap-4 py-16 text-center"
-                >
-                  <div className="w-16 h-16 rounded-full bg-[var(--brand-accent)]/15 flex items-center justify-center">
-                    <CheckCircle className="h-8 w-8 text-[var(--brand-accent)]" aria-hidden="true" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-[var(--foreground)]">
-                    {t("contact.form.success.title")}
-                  </h3>
-                  <p className="text-[var(--foreground)]/60 text-sm max-w-xs">
-                    {t("contact.form.success.body")}
-                  </p>
-                  <button
-                    onClick={() => setStatus("idle")}
-                    className="mt-2 px-5 py-2.5 rounded-xl text-sm font-medium bg-[var(--brand-accent)]/10 text-[var(--brand-accent)] border border-[var(--brand-accent)]/20 hover:bg-[var(--brand-accent)]/20 transition-all duration-200"
-                  >
-                    {t("contact.form.success.again")}
-                  </button>
-                </motion.div>
-              ) : (
-                <form ref={formRef} onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <InputField
-                      id="name"
-                      label={t("contact.form.nameLabel")}
-                      value={form.name}
-                      onChange={updateField("name")}
-                      error={errors.name}
-                      placeholder={t("contact.form.namePlaceholder")}
-                      icon={User}
-                      required
-                    />
-                    <InputField
-                      id="email"
-                      label={t("contact.form.emailLabel")}
-                      type="email"
-                      value={form.email}
-                      onChange={updateField("email")}
-                      error={errors.email}
-                      placeholder={t("contact.form.emailPlaceholder")}
-                      icon={AtSign}
-                      required
-                    />
-                  </div>
-
-                  <InputField
-                    id="subject"
-                    label={t("contact.form.subjectLabel")}
-                    value={form.subject}
-                    onChange={updateField("subject")}
-                    error={errors.subject}
-                    placeholder={t("contact.form.subjectPlaceholder")}
-                    icon={FileText}
-                    required
-                  />
-
-                  <TextAreaField
-                    id="message"
-                    label={t("contact.form.messageLabel")}
-                    value={form.message}
-                    onChange={updateField("message")}
-                    error={errors.message}
-                    placeholder={t("contact.form.messagePlaceholder")}
-                    required
-                  />
-
-                  {status === "error" && (
-                    <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
-                      <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
-                      {t("contact.form.errorMessage")}
-                    </div>
-                  )}
-
-                  <motion.button
-                    type="submit"
-                    disabled={status === "submitting"}
-                    whileHover={{ scale: status === "submitting" ? 1 : 1.02 }}
-                    whileTap={{ scale: status === "submitting" ? 1 : 0.98 }}
-                    className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-semibold text-sm bg-[var(--brand-accent)] text-[var(--brand-accent-foreground)] hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 shadow-[0_4px_24px_-4px_var(--brand-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
-                  >
-                    {status === "submitting" ? (
-                      <>
-                        <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
-                        </svg>
-                        {t("contact.form.submitting")}
-                      </>
-                    ) : (
-                      <>
-                        <Send className="h-4 w-4" aria-hidden="true" />
-                        {t("contact.form.submit")}
-                      </>
-                    )}
-                  </motion.button>
-
-                  <p className="text-xs text-[var(--foreground)]/40 text-center">
-                    {t("contact.form.privacy")}
-                  </p>
-                </form>
-              )}
+              <p className="text-sm text-[var(--muted-foreground)] mb-5">{t("socialBody")}</p>
+              <ul className="flex flex-col gap-3">
+                {(Array.isArray(socialLinks) ? socialLinks : []).map((social) => {
+                  const platform = social?.platform ?? "";
+                  const url = social?.url ?? "#";
+                  const handle = social?.handle ?? "";
+                  const icon =
+                    platformIconMap[platform] ?? (
+                      <Mail className="h-5 w-5" aria-hidden="true" />
+                    );
+                  return (
+                    <li key={platform}>
+                      <Link
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 p-3 rounded-xl border border-[var(--border)] bg-[var(--background)] hover:border-[var(--accent)]/40 hover:bg-[var(--card-hover)] transition-all duration-200 group"
+                      >
+                        <span className="text-[var(--muted-foreground)] group-hover:text-[var(--accent)] transition-colors duration-200">
+                          {icon}
+                        </span>
+                        <div className="min-w-0">
+                          <p className="text-xs font-semibold text-[var(--foreground)]/60 uppercase tracking-wider">
+                            {platform}
+                          </p>
+                          <p className="text-sm text-[var(--foreground)] truncate">{handle}</p>
+                        </div>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
-          </motion.div>
+          </Reveal>
 
-          {/* Social Links Panel — right (2 cols) */}
-          <motion.div variants={slideInRight} className="lg:col-span-2 flex flex-col gap-6">
-            <div>
-              <h2 className="text-xl font-semibold text-[var(--foreground)] mb-2">
-                {t("contact.social.heading")}
-              </h2>
-              <p className="text-sm text-[var(--foreground)]/55 leading-relaxed">
-                {t("contact.social.subheading")}
+          <Reveal delay={0.2}>
+            <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6">
+              <h3
+                className="text-base font-bold text-[var(--foreground)] mb-2"
+                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+              >
+                Response time
+              </h3>
+              <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">
+                I typically respond within{" "}
+                <span className="text-[var(--accent)] font-semibold">24 hours</span> on business
+                days. For urgent matters, LinkedIn is the fastest way to reach me.
               </p>
             </div>
-
-            <div className="flex flex-col gap-4">
-              {SOCIAL_LINKS.map((social, i) => (
-                <Reveal key={social.id} delay={i * 0.1}>
-                  <motion.a
-                    href={social.href}
-                    target={social.id !== "email" ? "_blank" : undefined}
-                    rel={social.id !== "email" ? "noopener noreferrer" : undefined}
-                    whileHover={{ x: 4 }}
-                    transition={{ duration: 0.2 }}
-                    className={`flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-br ${social.color} border ${social.border} transition-all duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]`}
-                    aria-label={`${social.label}: ${social.handle}`}
-                  >
-                    <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                      <social.icon className={`h-5 w-5 ${social.iconColor}`} aria-hidden="true" />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-sm font-semibold text-[var(--foreground)] group-hover:text-[var(--brand-accent)] transition-colors duration-200">
-                        {social.label}
-                      </p>
-                      <p className="text-xs text-[var(--foreground)]/50 truncate">{social.handle}</p>
-                      <p className="text-xs text-[var(--foreground)]/40 mt-0.5">{social.description}</p>
-                    </div>
-                  </motion.a>
-                </Reveal>
-              ))}
-            </div>
-
-            {/* Availability card */}
-            <Reveal delay={0.35}>
-              <div className="rounded-2xl border border-[var(--brand-accent)]/15 bg-[var(--brand-accent)]/5 p-5">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--brand-accent)] opacity-60" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--brand-accent)]" />
-                  </span>
-                  <span className="text-xs font-semibold text-[var(--brand-accent)] uppercase tracking-widest">
-                    {t("contact.availability.badge")}
-                  </span>
-                </div>
-                <p className="text-sm font-medium text-[var(--foreground)] mb-1">
-                  {t("contact.availability.title")}
-                </p>
-                <p className="text-xs text-[var(--foreground)]/55 leading-relaxed">
-                  {t("contact.availability.body")}
-                </p>
-              </div>
-            </Reveal>
-
-            {/* Resume download */}
-            <Reveal delay={0.45}>
-              <Link
-                href={brandConstants.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-medium border border-white/10 text-[var(--foreground)]/70 hover:text-[var(--foreground)] hover:border-white/25 hover:bg-white/5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
-              >
-                <FileText className="h-4 w-4" aria-hidden="true" />
-                {t("contact.resume.button")}
-              </Link>
-            </Reveal>
-          </motion.div>
-        </motion.div>
+          </Reveal>
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
